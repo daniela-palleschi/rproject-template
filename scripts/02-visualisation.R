@@ -33,15 +33,21 @@ df_rating <- read_csv(here("data", "example_data.csv"))
 
 # Visualise data ----
 
+# set range of colours to be used for rating values in barplot
+col_func <- colorRampPalette(c('red4',"white", '#2C74C9'))
+
 fig_rating <-
   df_rating |>
   # make rating a factor
   mutate(rating = factor(rating)) |> 
   ggplot() +
   aes(x = condition, fill = rating) +
-  geom_bar() +
+  # add barplot with black outer lines with thickness 0.2
+  geom_bar(colour = "black", size = 0.2) +
   # get whole integers along y-axis
   scale_y_continuous(breaks = breaks_pretty()) +
+  # use red/blue colour scale
+  scale_fill_manual(values = col_func(7)) +
   # change theme
   theme_bw() +
   # add informative labels

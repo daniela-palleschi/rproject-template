@@ -13,13 +13,13 @@ library(here)
 
 # Generate data ----
 
-set.seed(2024)
+set.seed(2021)
 
 df_example <-
   tibble(
-  id = rep(01:06, each = 4),
-  condition = rep(c("A", "B"), times = 12),
-  rating = floor(runif(24, min=1, max=8))
+  id = rep(01:10, each = 4),
+  condition = rep(c("A", "B"), times = 20),
+  rating = floor(runif(40, min=1, max=8))
 )
 
 # Save dataframe in data/ ----
