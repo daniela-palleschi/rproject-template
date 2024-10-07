@@ -44,9 +44,13 @@ fig_rating <-
   scale_y_continuous(breaks = breaks_pretty()) +
   # change theme
   theme_bw() +
+  # add informative labels
   labs(title = "Frequency of ratings (1-7) per condition",
        x = "Condition",
        y = "Frequency")
+
+# print the figure
+fig_rating
 
 # Save figure ----
 
